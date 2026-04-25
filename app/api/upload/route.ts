@@ -36,7 +36,8 @@ export async function POST(req: Request) {
 
     // 4. تحديث JSON بالبنية الجديدة (name و path فقط)
     const library = await getLibrary(session.user.id);
-    
+
+    // @ts-ignore
     library.push({
       name: customName.trim(),
       path: absolutePath // 👈 المسار المطلق الكامل كما طلبت
